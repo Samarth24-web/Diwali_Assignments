@@ -1,0 +1,75 @@
+import java.util.*;
+public class Practice {
+	
+	//check prime number
+	public static boolean isPrime(int n) {
+		if(n<2) return false;
+		for(int i=2 ; i<=Math.sqrt(n) ; i++) {
+			if(n%i==0) return false;
+		}
+		return true;
+	}
+	
+	//list all prime numbers upto n
+	public static List<Integer> getAllPrimes(int n){
+		List<Integer> list = new ArrayList<>();
+		for(int i=1 ; i<=n ; i++) {
+			if(isPrime(i)) {
+				list.add(i);
+			}
+		}
+		return list;
+	}
+	
+	//factorial of a number
+	public static long factorial(int n) {
+		int fact =1;
+		for(int i=1 ;i<=n ; i++) {
+			fact*=i;
+		}
+		return fact;
+	}
+	
+	//to get fibbo series upto n
+	public static List<Integer> fibbo(int n){
+		List<Integer> list = new ArrayList<>();
+		for(int i=0 ; i<n ; i++) {
+			if(i<2) {
+				list.add(i);
+			}
+			else {
+				list.add(list.get(i-1)+list.get(i-2));
+			}
+		}
+		return list;
+	}
+	
+	// check num is even or odd
+	public static String evenOrOdd(int n) {
+		return n%2==0?"Even":"Odd";
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number");
+		int n =sc.nextInt();
+		
+		
+//		boolean result = isPrime(n);
+//		if(result) System.out.println(n+" is a prime number.");
+//		else System.out.println(n+" is not a prime number");
+		
+//		List<Integer> list = getAllPrimes(n);
+//		System.out.println(list);
+		
+//		System.out.println("Factorial of "+n);
+//		System.out.println(factorial(n));
+		
+//		List<Integer> list = fibbo(n);
+//		System.out.println(list);
+		
+		System.out.println(evenOrOdd(n));
+		
+		sc.close();
+	}
+}
